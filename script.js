@@ -24,18 +24,16 @@ function dragOver(event) {
 function drop(event) {
     event.preventDefault();
     if (draggedElement) {
-        // Swap the content
         const currentElement = this;
         const tempContent = currentElement.innerHTML;
 
         currentElement.innerHTML = draggedElement.innerHTML;
         draggedElement.innerHTML = tempContent;
 
-        // Show the dragged element
         draggedElement.style.display = 'flex';
     }
 }
 
 function dragLeave() {
-    this.style.border = '';
+    // Optional: you can add styling for when an element is left during dragging
 }
